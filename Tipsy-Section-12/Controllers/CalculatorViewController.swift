@@ -27,6 +27,9 @@ class CalculatorViewController: UIViewController {
         let chosenText = sender.currentTitle!
         chosenTip = Float(chosenText.dropLast(1))! / 100
         
+        //Dismiss the keyboard when user choose any tip button
+        billTextField.endEditing(true)
+        
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
@@ -34,7 +37,11 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        print(splitNumberLabel.text!)
+        if billTextField.text != "" {
+            let totalValue = Float(billTextField.text!)! * (1 + chosenTip!)
+            print(String(format: "%.2f", totalValue / Float(splitNumberLabel.text!)!))
+        }
+        
     }
 }
 
