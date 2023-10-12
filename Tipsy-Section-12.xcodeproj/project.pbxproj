@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C6687602AD7179F00374C83 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C66875F2AD7179F00374C83 /* CalculatorLogic.swift */; };
 		2C9E8E122ACEFBBB0007128F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E8E112ACEFBBB0007128F /* AppDelegate.swift */; };
 		2C9E8E142ACEFBBB0007128F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E8E132ACEFBBB0007128F /* SceneDelegate.swift */; };
 		2C9E8E162ACEFBBB0007128F /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9E8E152ACEFBBB0007128F /* CalculatorViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C66875F2AD7179F00374C83 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 		2C9E8E0E2ACEFBBB0007128F /* Tipsy-Section-12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tipsy-Section-12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9E8E112ACEFBBB0007128F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C9E8E132ACEFBBB0007128F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C66875D2AD7170000374C83 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C9E8E172ACEFBBB0007128F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C66875E2AD7174200374C83 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C66875F2AD7179F00374C83 /* CalculatorLogic.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2C9E8E052ACEFBBB0007128F = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +76,11 @@
 		2C9E8E102ACEFBBB0007128F /* Tipsy-Section-12 */ = {
 			isa = PBXGroup;
 			children = (
+				2C66875E2AD7174200374C83 /* Models */,
+				2C66875D2AD7170000374C83 /* Views */,
+				2C9E8E272ACF00F40007128F /* Controllers */,
 				2C9E8E112ACEFBBB0007128F /* AppDelegate.swift */,
 				2C9E8E132ACEFBBB0007128F /* SceneDelegate.swift */,
-				2C9E8E272ACF00F40007128F /* Controllers */,
-				2C9E8E172ACEFBBB0007128F /* Main.storyboard */,
 				2C9E8E1A2ACEFBBC0007128F /* Assets.xcassets */,
 				2C9E8E1C2ACEFBBC0007128F /* LaunchScreen.storyboard */,
 				2C9E8E1F2ACEFBBC0007128F /* Info.plist */,
@@ -151,6 +170,7 @@
 			files = (
 				2C9E8E162ACEFBBB0007128F /* CalculatorViewController.swift in Sources */,
 				2C9E8E122ACEFBBB0007128F /* AppDelegate.swift in Sources */,
+				2C6687602AD7179F00374C83 /* CalculatorLogic.swift in Sources */,
 				2C9E8E142ACEFBBB0007128F /* SceneDelegate.swift in Sources */,
 				2C9E8E262ACF00DC0007128F /* ResultsViewController.swift in Sources */,
 			);

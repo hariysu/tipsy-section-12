@@ -9,14 +9,11 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
-    var chosenTip: Float?
-    
     var result: String = ""
-    var numberOfPeople: String = ""
-    var chosenPercentage: String = ""
+    var calculatorLogic = CalculatorLogic()
 
     @IBOutlet weak var billTextField: UITextField!
-    @IBOutlet weak var zeroPctButton: UIButton!
+    @IBOutlet weak var zeroPctButton: 
     @IBOutlet weak var tenPctButton: UIButton!
     @IBOutlet weak var twentyPctButton: UIButton!
     @IBOutlet weak var splitNumberLabel: UILabel!
@@ -28,23 +25,20 @@ class CalculatorViewController: UIViewController {
         
         sender.isSelected = true
         
-        chosenPercentage = sender.currentTitle!
-        chosenTip = (Float(chosenPercentage.dropLast(1)) ?? 0) / 100
-        
+        calculatorLogic.chosenPercentage = sender.currentTitle!
         //Dismiss the keyboard when user choose any tip button
         billTextField.endEditing(true)
-        
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        splitNumberLabel.text = String(format: "%.0f", sender.value)
+        calculatorLogic.peopleCount = String(format: "%.0f", sender.value)
+        splitNumberLabel.text = calculatorLogic.peopleCount
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
         if billTextField.text != "" {
-            let totalValue = Float(billTextField.text!)! * (1 + chosenTip!)
-            result = String(format: "%.2f", totalValue / Float(splitNumberLabel.text!)!)
-            
+            result = calculatorLogic.calculate(billText: billTextField.text!)
+
             // To go to ResultsViewController
             self.performSegue(withIdentifier: "goToResult", sender: self)
         }
@@ -55,8 +49,8 @@ class CalculatorViewController: UIViewController {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultsViewController
             destinationVC.result = result
-            destinationVC.numberOfPeople = splitNumberLabel.text ?? ""
-            destinationVC.tipPercentage = chosenPercentage
+            destinationVC.numberOfPeople = calculatorLogic.peopleCount
+            destinationVC.tipPercentage = calculatorLogic.chosenPercentage
         }
     }
 }
